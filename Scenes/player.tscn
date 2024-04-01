@@ -1,17 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnc0rh8g5afpv"]
+[gd_scene load_steps=6 format=3 uid="uid://dnc0rh8g5afpv"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ra24q"]
-[ext_resource type="Texture2D" uid="uid://teiefy47i2rc" path="res://Art Assets/White.png" id="1_sei1m"]
+[ext_resource type="Texture2D" uid="uid://bovjbyw1ml642" path="res://Art Assets/LVL1small.png" id="2_axv3k"]
+[ext_resource type="Resource" uid="uid://cxefhutpb8f2a" path="res://Resources/player.tres" id="2_jgmcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfm0p"]
-size = Vector2(56, 28)
+size = Vector2(48.5, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ppck"]
+size = Vector2(306, 264)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ra24q")
+properties = ExtResource("2_jgmcm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yfm0p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.383333, 0.166667)
-texture = ExtResource("1_sei1m")
+position = Vector2(0, -6)
+texture = ExtResource("2_axv3k")
+
+[node name="UI_Fish" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI_Fish"]
+offset_left = 498.0
+offset_top = 67.0
+offset_right = 640.0
+offset_bottom = 152.0
+text = "Fish"
+
+[node name="feedBar" type="ProgressBar" parent="UI_Fish"]
+offset_left = 558.0
+offset_top = 60.0
+offset_right = 1099.0
+offset_bottom = 95.0
+show_percentage = false
+
+[node name="InhaleBar" type="ProgressBar" parent="UI_Fish"]
+offset_left = 42.0
+offset_top = 551.0
+offset_right = 480.0
+offset_bottom = 565.0
+value = 100.0
+show_percentage = false
+
+[node name="Inhale_Area2D" type="Area2D" parent="." groups=["Inhale"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inhale_Area2D"]
+position = Vector2(186, 0)
+shape = SubResource("RectangleShape2D_8ppck")
+
+[connection signal="value_changed" from="UI_Fish/feedBar" to="." method="_on_feed_bar_value_changed"]

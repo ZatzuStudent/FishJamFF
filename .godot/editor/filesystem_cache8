@@ -1,15 +1,22 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711938493
+::res://::1711970591
 icon.svg::CompressedTexture2D::5471316285639843195::1711880350::1711880355::1::::<><>::
-::res://Art Assets/::1711934839
+::res://Art Assets/::1711973955
 dqw.png::CompressedTexture2D::3296688029821553226::1711934839::1711934839::1::::<><>::
+LVL1small.png::CompressedTexture2D::3412965961933539657::1711941261::1711941261::1::::<><>::
+LVL1small_spritesheet.png::CompressedTexture2D::5617862819097296967::1711973955::1711973955::1::::<><>::
 White.png::CompressedTexture2D::1342338720309398672::1711880470::1711880471::1::::<><>::
-::res://Scenes/::1711938310
-fish_1.tscn::PackedScene::5191867499511744671::1711936551::0::1::::<><>::uid://teiefy47i2rc::::res://Art Assets/White.png<>res://Scripts/fish_1.gd<>res://Scripts/Eaten_comp.gd
-main.tscn::PackedScene::2633737189701004070::1711938290::0::1::::<><>::uid://dnc0rh8g5afpv::::res://Scenes/player.tscn<>uid://bm7678sx4qb2a::::res://Art Assets/dqw.png<>uid://cf78kf32fkrkh::::res://Scenes/fish_1.tscn<>res://Scripts/Camera2D.gd
-player.tscn::PackedScene::8077394476152094215::1711938310::0::1::::<><>::res://Scripts/player.gd<>uid://teiefy47i2rc::::res://Art Assets/White.png
-::res://Scripts/::1711938288
+::res://Resources/::1711971058
+fish_1.tres::Resource/Fishies::8074768843856959547::1711971058::0::1::::<><>::res://Scripts/Fish_Properties.gd
+player.tres::Resource/Fishies::6395759448100810850::1711970801::0::1::::<><>::res://Scripts/Fish_Properties.gd
+::res://Scenes/::1711973897
+fish_1.tscn::PackedScene::5191867499511744671::1711973897::0::1::::<><>::res://Scripts/fish_1.gd<>uid://dnbqi7fwrd2e6::::res://Resources/fish_1.tres<>uid://bovjbyw1ml642::::res://Art Assets/LVL1small.png
+main.tscn::PackedScene::2633737189701004070::1711973897::0::1::::<><>::uid://dnc0rh8g5afpv::::res://Scenes/player.tscn<>uid://bm7678sx4qb2a::::res://Art Assets/dqw.png<>uid://cf78kf32fkrkh::::res://Scenes/fish_1.tscn<>res://Scripts/Camera2D.gd
+player.tscn::PackedScene::8077394476152094215::1711973897::0::1::::<><>::res://Scripts/player.gd<>uid://bovjbyw1ml642::::res://Art Assets/LVL1small.png<>uid://cxefhutpb8f2a::::res://Resources/player.tres
+::res://Scripts/::1711973890
+Away_comp.gd::GDScript::-1::1711969110::0::1::::<>Area2D<>::
 Camera2D.gd::GDScript::-1::1711937184::0::1::::<>Camera2D<>::
-Eaten_comp.gd::GDScript::-1::1711891246::0::1::::<>Node2D<>::
-fish_1.gd::GDScript::-1::1711891643::0::1::::<>CharacterBody2D<>::
-player.gd::GDScript::-1::1711938288::0::1::::Player<>CharacterBody2D<>::
+Eaten_comp.gd::GDScript::-1::1711973245::0::1::::<>RefCounted<>::
+fish_1.gd::GDScript::-1::1711973890::0::1::::<>CharacterBody2D<>::
+Fish_Properties.gd::GDScript::-1::1711970771::0::1::::Fishies<>Resource<>::
+player.gd::GDScript::-1::1711971430::0::1::::Player<>CharacterBody2D<>::

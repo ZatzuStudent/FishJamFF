@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cf78kf32fkrkh"]
+[gd_scene load_steps=14 format=3 uid="uid://cf78kf32fkrkh"]
 
 [ext_resource type="Script" path="res://Scripts/fish_1.gd" id="1_katpj"]
 [ext_resource type="Resource" uid="uid://dnbqi7fwrd2e6" path="res://Resources/fish_1.tres" id="2_8r0j0"]
 [ext_resource type="Texture2D" uid="uid://bovjbyw1ml642" path="res://Art Assets/LVL1small.png" id="2_ykkam"]
+[ext_resource type="PackedScene" uid="uid://dnc0rh8g5afpv" path="res://Scenes/player.tscn" id="3_8sgxw"]
 [ext_resource type="Texture2D" uid="uid://cmblm6dv5v0sx" path="res://Art Assets/LVL1small_spritesheet.png" id="4_n8r7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gcdgc"]
@@ -47,11 +48,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soxq2"]
+radius = 97.0
+height = 272.0
+
 [node name="Fish_1" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_katpj")
 properties = ExtResource("2_8r0j0")
+player = ExtResource("3_8sgxw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gcdgc")
@@ -83,8 +89,14 @@ sprite_frames = SubResource("SpriteFrames_87e4b")
 autoplay = "default"
 frame_progress = 0.183434
 
+[node name="Inhale_Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inhale_Area2D"]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_soxq2")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="area_entered" from="Eaten_comp" to="." method="_on_eaten_comp_area_entered"]
-[connection signal="area_exited" from="Eaten_comp" to="." method="_on_eaten_comp_area_exited"]
 [connection signal="body_entered" from="Eaten_comp" to="." method="_on_eaten_comp_body_entered"]
 [connection signal="body_entered" from="View_comp" to="." method="_on_view_comp_body_entered"]
+[connection signal="body_entered" from="Inhale_Area2D" to="." method="_on_inhale_area_2d_body_entered"]
+[connection signal="body_exited" from="Inhale_Area2D" to="." method="_on_inhale_area_2d_body_exited"]

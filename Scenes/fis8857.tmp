@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf78kf32fkrkh"]
+
+[ext_resource type="Script" path="res://Scripts/fish_1.gd" id="1_katpj"]
+[ext_resource type="Texture2D" uid="uid://bovjbyw1ml642" path="res://Art Assets/LVL1small.png" id="2_ykkam"]
+[ext_resource type="Script" path="res://Scripts/Eaten_comp.gd" id="3_bto33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcdgc"]
+size = Vector2(56, 16)
+
+[node name="Fish_1" type="Node2D"]
+script = ExtResource("1_katpj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -7)
+texture = ExtResource("2_ykkam")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Eaten_comp" type="Area2D" parent="."]
+script = ExtResource("3_bto33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eaten_comp"]
+shape = SubResource("RectangleShape2D_gcdgc")
+
+[connection signal="body_entered" from="Eaten_comp" to="Eaten_comp" method="_on_body_entered"]

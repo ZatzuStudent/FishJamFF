@@ -1,2 +1,12 @@
+res://Scenes/fish_1.tscn
+res://Scripts/fish_1.gd
 res://Scenes/main.tscn
 res://Scenes/player.tscn
+res://Scripts/Away_comp.gd
+res://Scripts/player.gd
+res://Scripts/Fish_Properties.gd
+res://Resources/player.tres
+res://Resources/fish_1.tres
+res://Scripts/Eaten_comp.gd
+res://Scripts/Fish_Spawner.gd
+res://Scripts/Camera2D.gd

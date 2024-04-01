@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Fishies" load_steps=2 format=3 uid="uid://cxefhutpb8f2a"]
+
+[ext_resource type="Script" path="res://Scripts/Fish_Properties.gd" id="1_xawts"]
+
+[resource]
+script = ExtResource("1_xawts")
+speed = 30
+max_dir_x = 3
+max_dir_y = 2
