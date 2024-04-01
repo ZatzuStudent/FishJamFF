@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdr2jclgjtny1"]
+
+[ext_resource type="PackedScene" uid="uid://dnc0rh8g5afpv" path="res://Scenes/player.tscn" id="1_kjbej"]
+[ext_resource type="Texture2D" uid="uid://bm7678sx4qb2a" path="res://Art Assets/dqw.png" id="1_snh2h"]
+[ext_resource type="PackedScene" uid="uid://cf78kf32fkrkh" path="res://Scenes/fish_1.tscn" id="2_oppsq"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="3_xoxq2"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.633, 1.633)
+texture = ExtResource("1_snh2h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-578, -162)
+script = ExtResource("3_xoxq2")
+
+[node name="Player" parent="." instance=ExtResource("1_kjbej")]
+
+[node name="Fish_1" parent="." instance=ExtResource("2_oppsq")]
+position = Vector2(299, -93)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-236, 94)
+build_mode = 1
+polygon = PackedVector2Array(1668, -733, 1649, 579, -685, 706, -615, 442, 1233, 366, 1195, -447, -26, -475, -745, -472, -691, 414, -1342, 385, -1136, -637)
+
+[node name="UI_Fish" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI_Fish"]
+offset_left = -50.0
+offset_top = -297.0
+offset_right = 92.0
+offset_bottom = -212.0
+text = "Fish"
+
+[node name="ProgressBar" type="ProgressBar" parent="UI_Fish"]
+offset_left = 10.0
+offset_top = -304.0
+offset_right = 551.0
+offset_bottom = -269.0
+show_percentage = false

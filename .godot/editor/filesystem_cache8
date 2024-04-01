@@ -1,0 +1,15 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1711938493
+icon.svg::CompressedTexture2D::5471316285639843195::1711880350::1711880355::1::::<><>::
+::res://Art Assets/::1711934839
+dqw.png::CompressedTexture2D::3296688029821553226::1711934839::1711934839::1::::<><>::
+White.png::CompressedTexture2D::1342338720309398672::1711880470::1711880471::1::::<><>::
+::res://Scenes/::1711938310
+fish_1.tscn::PackedScene::5191867499511744671::1711936551::0::1::::<><>::uid://teiefy47i2rc::::res://Art Assets/White.png<>res://Scripts/fish_1.gd<>res://Scripts/Eaten_comp.gd
+main.tscn::PackedScene::2633737189701004070::1711938290::0::1::::<><>::uid://dnc0rh8g5afpv::::res://Scenes/player.tscn<>uid://bm7678sx4qb2a::::res://Art Assets/dqw.png<>uid://cf78kf32fkrkh::::res://Scenes/fish_1.tscn<>res://Scripts/Camera2D.gd
+player.tscn::PackedScene::8077394476152094215::1711938310::0::1::::<><>::res://Scripts/player.gd<>uid://teiefy47i2rc::::res://Art Assets/White.png
+::res://Scripts/::1711938288
+Camera2D.gd::GDScript::-1::1711937184::0::1::::<>Camera2D<>::
+Eaten_comp.gd::GDScript::-1::1711891246::0::1::::<>Node2D<>::
+fish_1.gd::GDScript::-1::1711891643::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1711938288::0::1::::Player<>CharacterBody2D<>::
